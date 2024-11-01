@@ -42,7 +42,15 @@ const Navbar = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const sidebarRef = useRef(null);
   const [openKeys, setOpenKeys] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
+  const handleMouseEnter = (menu) => {
+    setActiveDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
   const handleOpenChange = (keys) => {
     setOpenKeys(keys);
   };
@@ -233,22 +241,94 @@ const Navbar = () => {
           </div>
           <div>
             <BigLinkContainer>
-              <Link to="/">
-                <span>Home</span>
-              </Link>
-              <Link to="/offer">
-                <span>Student</span>
-              </Link>
-              <Link to="/subscription">
-                <span>Alumni</span>
-              </Link>
+              <LinkWrapper>
+                <Link to="/">
+                  <span>Home</span>
+                </Link>
+              </LinkWrapper>
 
-              <Link to="/user-dashboard">
-                <span>Employers</span>
-              </Link>
-              <Link to="/user-dashboard">
-                <span>Employers</span>
-              </Link>
+              {/* Student Dropdown */}
+              <LinkWrapper
+                onMouseEnter={() => handleMouseEnter("student")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="#">
+                  <span>Student</span>
+                </Link>
+                <DropdownMenu show={activeDropdown === "student"}>
+                  <DropdownLink to="/student-resources">
+                    Resumes | Employment Services
+                  </DropdownLink>
+                  <DropdownLink to="/job-search">Sample Resumes</DropdownLink>
+                  <DropdownLink to="/career-advising">
+                    Experiential Learning
+                  </DropdownLink>
+                  <DropdownLink to="/development-programs">
+                    Bucky's Career Closet
+                  </DropdownLink>
+                  <DropdownLink to="/development-programs">
+                    Online Resources
+                  </DropdownLink>
+                </DropdownMenu>
+              </LinkWrapper>
+
+              {/* Alumni Dropdown */}
+              <LinkWrapper
+                onMouseEnter={() => handleMouseEnter("alumni")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="#">
+                  <span>Alumni</span>
+                </Link>
+                <DropdownMenu show={activeDropdown === "alumni"}>
+                  <DropdownLink to="/career-transition">
+                    Resumes | Employment Services
+                  </DropdownLink>
+                  <DropdownLink to="/networking">Sample Resumes</DropdownLink>
+                  <DropdownLink to="/job-board">Online Resources</DropdownLink>
+                  <DropdownLink to="/success-stories">
+                    Success Stories
+                  </DropdownLink>
+                </DropdownMenu>
+              </LinkWrapper>
+
+              {/* Employers Dropdown */}
+              <LinkWrapper
+                onMouseEnter={() => handleMouseEnter("employers")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="#">
+                  <span>Employers</span>
+                </Link>
+                <DropdownMenu show={activeDropdown === "employers"}>
+                  <DropdownLink to="/partner">Employer Services</DropdownLink>
+                  <DropdownLink to="/career-fairs">
+                    Post a Job | Handshake
+                  </DropdownLink>
+                  <DropdownLink to="/resume-access">
+                    Experiential Learning
+                  </DropdownLink>
+                  <DropdownLink to="/testimonials">Career Fairs</DropdownLink>
+                  <DropdownLink to="/testimonials">Maps & Parking</DropdownLink>
+                </DropdownMenu>
+              </LinkWrapper>
+
+              {/* Other Links */}
+              <LinkWrapper>
+                <Link to="/user-dashboard">
+                  <span>Faculty & Staff</span>
+                </Link>
+              </LinkWrapper>
+              <LinkWrapper>
+                <Link to="/families">
+                  <span>Families</span>
+                </Link>
+              </LinkWrapper>
+              <LinkWrapper>
+                <Link to="/contact">
+                  <span>Contact Us</span>
+                </Link>
+              </LinkWrapper>
             </BigLinkContainer>
           </div>
         </Space2>
@@ -256,6 +336,35 @@ const Navbar = () => {
     </>
   );
 };
+
+const LinkWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%; /* Places it directly below the link */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px;
+  display: ${(props) => (props.show ? "block" : "none")};
+  z-index: 10;
+`;
+
+const DropdownLink = styled(Link)`
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+
 const MenuSubmenu = styled(Menu.SubMenu)`
   a {
   }
@@ -330,14 +439,15 @@ const BigNav = styled.div`
   width: 100%;
   top: 0;
   z-index: 999 !important;
-  background-color: #0e161c;
+  background: white;
+  color: ${Colors.darkBlue};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: top 0.3s;
   img {
     max-width: 100%;
     height: 40px;
   }
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 999px) {
     display: none;
   }
   @media screen and (min-width: 800px) {
@@ -350,30 +460,30 @@ const Space2 = styled.div`
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: 800px) {
-    padding: 4px 4rem;
+    padding: 4px 2rem;
   }
   @media screen and (min-width: 1000px) {
-    padding: 8px 6rem;
+    padding: 8px 4ch;
   }
   @media screen and (min-width: 1200px) {
-    padding: 10px 8rem;
+    padding: 10px 6rem;
   }
 `;
 const BigLinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;
-  color: white;
+  color: ${Colors.darkBlue};
   a {
     text-decoration: none;
     &:hover {
       text-decoration-line: underline;
-      color: white;
+      color: ${Colors.darkBlue};
       transform: scale(1.05);
     }
   }
   span {
-    color: white !important;
+    color: ${Colors.darkBlue};
   }
 `;
 const Logo = styled.img`
@@ -402,18 +512,9 @@ const Space = styled.div`
   color: ${Colors.darkBlue} !important;
   justify-content: end;
 `;
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  display: flex;
-  gap: 5px;
-  svg {
-    color: ${({ active }) => (active ? "white" : "white")};
-  }
-`;
 
 const StyledNavbar = styled.div`
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 999px) {
     position: fixed;
     width: 100%;
     top: 0;
@@ -426,7 +527,7 @@ const StyledNavbar = styled.div`
       height: 40px;
     }
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `;
