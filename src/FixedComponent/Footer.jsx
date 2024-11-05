@@ -7,15 +7,25 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
-
-import logo from "../Images/Etsulogo.png";
+import { Colors } from "../Colors/ColorComponent";
+import logo from "../Images/east-tennessee-state-university__etsu.svg";
+import { FaFacebookF, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
       <Container>
+        <First>
+          <h1>University Career Services - DP Culp Student Center</h1>
+          <p>Carrier Center, Room 222A - 412 J.L. Seehorn Dr. | PO Box 70718</p>
+          <p>Johnson City, TN 37614 ( Get Directions)</p>
+          <p>Phone: 423-439-4450</p>
+          <h3>DIVISION OF STUDENT LIFE AND ENROLLMENT</h3>
+        </First>
         <Bigger>
           <div>
-            <Link to="/">{/* <Logo src={logo} alt="Logo" /> */}</Link>
+            <Link to="/">
+              <Logo src={logo} alt="Logo" />
+            </Link>
             <Intro></Intro>
           </div>
           <Big>
@@ -24,19 +34,22 @@ const Footer = () => {
               <Split>
                 <Split1>
                   <Link to="/">Home</Link>
-                  <Link to="/aboutUs">About us</Link>
-                  <Link to="https://calendly.com/cashflowcapital-info/free-30-minutes-consultation">
-                    Book a Call
-                  </Link>
-                  <Link to="/offer">Offer</Link>
-                  <Link to="/faqs">FAQS</Link>
+                  <Link to="/work-in-progress">Sample Resumes</Link>
+                  <Link to="work-in-progress">Contact</Link>
+                  <Link to="/work-in-progress">Bucky's Career Closet</Link>
+                  <Link to="/work-in-progress">Online Resources</Link>
+                  <Link to="/work-in-progress">Experimental Learning</Link>
                 </Split1>
                 <Split2>
-                  <Link to="/terms">Terms & Conditions</Link>
-                  <Link to="/Policy">Privacy Policy</Link>
-                  <Link to="/subscription">Subscription</Link>
-                  <Link to="/user-dashboard">Dashboard</Link>
-                  <Link to="/login">Login/SignUp</Link>
+                  <Link to="/work-in-progress">
+                    Resume | Employment Services
+                  </Link>
+                  <Link to="/work-in-progress">Career Fairs</Link>
+                  <Link to="/work-in-progressn">Post a Job | Handshake</Link>
+
+                  <Link to="/work-in-progress">Employer Service</Link>
+                  <Link to="/work-in-progress">Faculty & Staff</Link>
+                  <Link to="/work-in-progress">Families</Link>
                 </Split2>
               </Split>
             </div>
@@ -44,35 +57,19 @@ const Footer = () => {
               <SubHead>Contact us</SubHead>
 
               <Mail>
-                {" "}
-                <ContactText href="mailto:cashflowcapital.info@gmail.com">
-                  cashflowcapital.info@gmail.com
+                <ContactText href="mailto:careers@etsu.edu">
+                  <FaEnvelope />
+                  careers@etsu.edu
+                </ContactText>
+                <ContactText href="tel:423-439-4450">
+                  <FaPhone />
+                  423-439-4450
                 </ContactText>
               </Mail>
-              <Contact>
-                <ContactText href="https://wa.me/+2347036848713">
-                  <WhatsAppOutlined
-                    style={{ fontSize: "24px", color: "#ffffff" }}
-                  />
-                </ContactText>
-                <ContactText href="https://t.me/Tradewithtgbanks">
-                  <SendOutlined
-                    style={{ fontSize: "24px", color: "#ffffff" }}
-                  />
-                </ContactText>
-                <ContactText href="https://twitter.com/Cashflow_HQ">
-                  <TwitterOutlined
-                    style={{ fontSize: "24px", color: "#ffffff" }}
-                  />
-                </ContactText>
-                <ContactText href="https://discord.gg/invitecode">
-                  <FaDiscord style={{ fontSize: "24px", color: "#ffffff" }} />
-                </ContactText>
-              </Contact>
             </Socials>
           </Big>
         </Bigger>
-        <End>© 2024 CashflowCapital / All rights reserved</End>
+        <End>© 2024 University Career Service - All rights reserved</End>
       </Container>
     </>
   );
@@ -80,12 +77,55 @@ const Footer = () => {
 
 export default Footer;
 
-const Mail = styled.h3`
-  color: #e6e6e6;
-  font-weight: 200;
-  margin: 0;
-  @media screen and (min-width: 800px) {
-    font-size: 16px;
+const First = styled.div`
+  padding-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  h1 {
+    color: ${Colors.yellow};
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #364679;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 4px;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+  h3 {
+    font-weight: 300;
+  }
+`;
+const Mail = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+`;
+
+const ContactText = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  svg {
+    font-size: 1rem;
   }
 `;
 const SubHead = styled.h3`
@@ -103,7 +143,7 @@ const Intro = styled.p`
 `;
 const Logo = styled.img`
   max-width: 100%;
-  height: 3rem;
+  /* height: 3rem; */
 `;
 const Split = styled.div`
   display: flex;
@@ -162,14 +202,14 @@ const Split2 = styled.div`
 `;
 
 const Socials = styled.div``;
-const ContactText = styled.a`
-  text-decoration: none;
-  color: white;
-  &:hover {
-    color: #ffffff !important;
-    transform: scale(1.2);
-  }
-`;
+// const ContactText = styled.a`
+//   text-decoration: none;
+//   color: white;
+//   &:hover {
+//     color: #ffffff !important;
+//     transform: scale(1.2);
+//   }
+// `;
 const End = styled.div`
   text-align: center;
   padding: 10px 0;
@@ -187,7 +227,7 @@ const Container = styled.div`
   box-shadow:
     rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  background-color: #08122a;
+  background: ${Colors.darkBlue};
   padding: 2rem;
   color: white;
   @media screen and (min-width: 800px) {
