@@ -1,7 +1,12 @@
 import React from "react";
+import Staff from "../Component/Staff";
 
 const FacultyStaff = () => {
-  return <div>FacultyStaff</div>;
+  return (
+    <div>
+      <Staff />
+    </div>
+  );
 };
 
 export default FacultyStaff;

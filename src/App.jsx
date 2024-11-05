@@ -21,6 +21,7 @@ import LoginPage from "./Authentication/LoginPage";
 import ResetPasswordPage from "./Authentication/ResetPasswordPage";
 import RegisterPage from "./Authentication/RegisterPage";
 import WorkInProgress from "./FixedComponent/WorkInProgress";
+import Staff from "./Component/Staff";
 // Global styles
 
 const GlobalStyle = createGlobalStyle`

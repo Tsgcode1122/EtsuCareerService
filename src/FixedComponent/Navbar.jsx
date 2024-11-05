@@ -207,7 +207,7 @@ const Navbar = () => {
 
               {/* Other Links with arrow */}
               <CustomMenuSubmenu key="faculty" icon={<IdcardOutlined />}>
-                <Link to="/user-dashboard" onClick={closeSidebar}>
+                <Link to="/faculty-staff" onClick={closeSidebar}>
                   <span>Faculty & Staff</span> <RightOutlined />
                 </Link>
               </CustomMenuSubmenu>
