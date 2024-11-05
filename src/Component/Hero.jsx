@@ -6,6 +6,7 @@ import Img2 from "../Images/hero1.jpg";
 import Img3 from "../Images/hero1.jpg";
 import Img4 from "../Images/hero1.jpg";
 import { Colors } from "../Colors/ColorComponent";
+import { Link } from "react-router-dom";
 
 const images = [Img1, Img2, Img3, Img4];
 
@@ -40,21 +41,25 @@ const Hero = () => {
           shape your future.
         </p>
         <Newsplit>
-          <Button>JOIN HANDSHAKE</Button>
-          <Button1
-            initial={{
-              backgroundPositionX: "-200%", // Start outside the button
-            }}
-            whileHover={{
-              backgroundPositionX: "0%", // Animate to the full color fill
-            }}
-            transition={{
-              duration: 0.8, // Control the speed of the fill
-              ease: "easeInOut", // Smooth transition
-            }}
-          >
-            Focus2 Login/Registration
-          </Button1>
+          <a href="https://etsu.joinhandshake.com/login" target="_blank">
+            <Button>JOIN HANDSHAKE</Button>
+          </a>
+          <Link to="/login">
+            <Button1
+              initial={{
+                backgroundPositionX: "-200%", // Start outside the button
+              }}
+              whileHover={{
+                backgroundPositionX: "0%", // Animate to the full color fill
+              }}
+              transition={{
+                duration: 0.8, // Control the speed of the fill
+                ease: "easeInOut", // Smooth transition
+              }}
+            >
+              Focus2 Login/Registration
+            </Button1>
+          </Link>
         </Newsplit>
       </Content>
     </Container>

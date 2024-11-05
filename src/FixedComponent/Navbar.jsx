@@ -6,15 +6,10 @@ import {
   UserOutlined,
   TeamOutlined,
   BankOutlined,
-  SolutionOutlined,
   IdcardOutlined,
   HeartOutlined,
   MailOutlined,
-  PhoneOutlined,
   HomeOutlined,
-  GiftOutlined,
-  CreditCardOutlined,
-  DashboardOutlined,
   RightOutlined,
 } from "@ant-design/icons";
 import logo from "../Images/Etsulogo.png";
@@ -129,12 +124,12 @@ const Navbar = () => {
                   key="student-resources"
                   style={{ paddingLeft: "35px" }}
                 >
-                  <Link to="/student-resources" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Resumes | Employment Services
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="job-search" style={{ paddingLeft: "35px" }}>
-                  <Link to="/job-search" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Sample Resumes
                   </Link>
                 </Menu.Item>
@@ -142,7 +137,7 @@ const Navbar = () => {
                   key="career-advising"
                   style={{ paddingLeft: "35px" }}
                 >
-                  <Link to="/career-advising" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Bucky's Career Closet
                   </Link>
                 </Menu.Item>
@@ -150,7 +145,7 @@ const Navbar = () => {
                   key="development-programs"
                   style={{ paddingLeft: "35px" }}
                 >
-                  <Link to="/development-programs" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Online Resources
                   </Link>
                 </Menu.Item>
@@ -166,17 +161,17 @@ const Navbar = () => {
                   key="career-transition"
                   style={{ paddingLeft: "35px" }}
                 >
-                  <Link to="/alumni-resources" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Resumes | Employment Services
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="networking" style={{ paddingLeft: "35px" }}>
-                  <Link to="/networking" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Sample Resumes
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="job-board" style={{ paddingLeft: "35px" }}>
-                  <Link to="/job-board" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Online Resources
                   </Link>
                 </Menu.Item>
@@ -189,22 +184,22 @@ const Navbar = () => {
                 title={<span>Employers</span>}
               >
                 <Menu.Item key="partner" style={{ paddingLeft: "35px" }}>
-                  <Link to="/partner" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Employer Services
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="career-fairs" style={{ paddingLeft: "35px" }}>
-                  <Link to="/career-fairs" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Post a Job | Handshake
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="resume-access" style={{ paddingLeft: "35px" }}>
-                  <Link to="/resume-access" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Experiential Learning
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="testimonials" style={{ paddingLeft: "35px" }}>
-                  <Link to="/testimonials" onClick={closeSidebar}>
+                  <Link to="/work-in-progress" onClick={closeSidebar}>
                     Career Fairs
                   </Link>
                 </Menu.Item>

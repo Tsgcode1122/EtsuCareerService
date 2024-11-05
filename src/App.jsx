@@ -16,13 +16,18 @@ import Families from "./Pages/Families";
 import PasswordReset from "./Authentication/PasswordReset";
 import { Result, Button } from "antd";
 import Layout from "./FixedComponent/Layout";
+
+import LoginPage from "./Authentication/LoginPage";
+import ResetPasswordPage from "./Authentication/ResetPasswordPage";
+import RegisterPage from "./Authentication/RegisterPage";
+import WorkInProgress from "./FixedComponent/WorkInProgress";
 // Global styles
 
 const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    background-color:#121933 !important;
+    /* background-color:#121933 !important; */
  
   font-family: "Montserrat", sans-serif;
     min-height: 100%;
@@ -77,10 +82,11 @@ const routes = [
     children: [
       { index: true, path: "/", element: <Home /> },
       { path: "register/:referralId", element: <Register /> },
-      { path: "register", element: <Register /> },
-      { path: "login", element: <Login /> },
-      { path: "reset-password", element: <PasswordReset /> },
+      { path: "register", element: <RegisterPage /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "reset-password", element: <ResetPasswordPage /> },
 
+      { path: "work-in-progress", element: <WorkInProgress /> },
       { path: "alumni", element: <Alumni /> },
       { path: "student", element: <Student /> },
       { path: "faculty-staff", element: <FacultyStaff /> },

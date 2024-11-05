@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Heading from "../FixedComponent/Heading";
-
+import missionImg from "../Images/mission.png";
 const Mission = () => {
   return (
     <Container>
@@ -14,6 +14,7 @@ const Mission = () => {
           readiness that is essential to the ETSU experience and empower
           students to live the lives they design.{" "}
         </p>
+        <img src={missionImg} />
       </Content>
     </Container>
   );
@@ -28,5 +29,8 @@ const Content = styled.div`
   p {
     font-weight: 300;
     text-align: center;
+  }
+  img {
+    max-width: 100%;
   }
 `;

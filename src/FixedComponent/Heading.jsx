@@ -33,7 +33,7 @@ const Heading = ({ children }) => {
         style={{
           display: "inline-block",
           background:
-            "linear-gradient(90deg, transparent, transparent, transparent, #e7e7e7, #f0e0b4)",
+            "linear-gradient(90deg, transparent, transparent, transparent, #e7e7e7, #cad4eb)",
           paddingRight: "10px",
           borderRadius: "5px ",
         }}
