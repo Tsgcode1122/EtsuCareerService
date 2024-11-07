@@ -141,6 +141,7 @@ const QuickLink = styled(Link)`
 `;
 const Content = styled.div`
   display: flex;
+  padding-top: 20px;
   flex-direction: column;
   gap: 30px;
   p {

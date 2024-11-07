@@ -96,6 +96,15 @@ const EventTitle = styled.h3`
   font-size: 1.8rem;
   color: #0d1355;
   margin-bottom: 0.5rem;
+  @media screen and (max-width: 320px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const EventDate = styled.p`

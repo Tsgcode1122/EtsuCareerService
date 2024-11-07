@@ -26,15 +26,6 @@ const Heading = styled.div`
 
   background-position: center;
   text-align: center;
-  @media screen and (max-width: 320px) {
-    width: 270px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    width: 300px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    width: 380px;
-  }
 `;
 const RegisterPageContainer = styled.div`
   margin: auto;

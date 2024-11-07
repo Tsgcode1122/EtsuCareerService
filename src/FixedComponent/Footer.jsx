@@ -91,6 +91,15 @@ const First = styled.div`
     text-decoration-thickness: 0.5px;
     text-underline-offset: 4px;
     margin: 0;
+    @media screen and (max-width: 320px) {
+      font-size: 1.4rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 1.6rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 1.6rem;
+    }
   }
   p {
     margin: 0;
@@ -160,13 +169,13 @@ const Split = styled.div`
     }
   }
   @media screen and (max-width: 320px) {
-    gap: 60px;
+    gap: 30px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    gap: 70px;
+    gap: 40px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    gap: 80px;
+    gap: 50px;
   }
   @media screen and (min-width: 1000px) {
     gap: 20px;
@@ -184,6 +193,15 @@ const Split1 = styled.div`
 
     text-decoration: none;
     color: white;
+    @media screen and (max-width: 320px) {
+      min-width: 100px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      min-width: 120px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      min-width: 120px;
+    }
   }
 `;
 const Split2 = styled.div`

@@ -6,7 +6,7 @@ import Heading from "../FixedComponent/Heading";
 
 // Styled components for the section
 const Section = styled.section`
-  padding: 4rem 2rem;
+  padding: 1rem 2rem 6rem 2rem;
   /* background-color: #f5f5f5; */
   text-align: center;
 `;
@@ -18,9 +18,10 @@ const SectionTitle = styled.h2`
 `;
 
 const IndustryGrid = styled.div`
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
 `;
@@ -90,7 +91,7 @@ const industries = [
 const CareerExploration = () => {
   return (
     <Section>
-      <Heading>Career Exploration by Industry</Heading>
+      <Heading>Industry Career Paths</Heading>
       <IndustryGrid>
         {industries.map((industry, index) => (
           <IndustryCard key={index} to={industry.path}>

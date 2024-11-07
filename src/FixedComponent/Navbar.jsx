@@ -212,12 +212,12 @@ const Navbar = () => {
                 </Link>
               </CustomMenuSubmenu>
               <CustomMenuSubmenu key="families" icon={<HeartOutlined />}>
-                <Link to="/families" onClick={closeSidebar}>
+                <Link to="/work-in-progress" onClick={closeSidebar}>
                   <span>Families</span> <RightOutlined />
                 </Link>
               </CustomMenuSubmenu>
               <CustomMenuSubmenu key="contact" icon={<MailOutlined />}>
-                <Link to="/contact" onClick={closeSidebar}>
+                <Link to="/work-in-progress" onClick={closeSidebar}>
                   <span>Contact</span> <RightOutlined />
                 </Link>
               </CustomMenuSubmenu>
