@@ -5,6 +5,8 @@ import PlatformHighlight from "../Component/PlatformHighlight";
 import UpcomingEvent from "../Component/UpcomingEvent";
 import OneStop from "../Component/OneStop";
 import Faqs from "../Component/Faqs";
+import CareerExploration from "../Component/CareerExploration";
+import FeaturedResources from "../Component/FeaturedResources";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
       <Mission />
       <PlatformHighlight />
       <UpcomingEvent />
+      <CareerExploration />
+      <FeaturedResources />
       <Faqs />
       <OneStop />
     </>

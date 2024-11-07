@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import staff1 from "../Images/staff1.jpg";
@@ -13,6 +13,7 @@ import staff9 from "../Images/staff9.jpg";
 import staff10 from "../Images/staff10.jpg";
 import staff11 from "../Images/staff11.svg";
 import { Colors } from "../Colors/ColorComponent";
+import bluebg from "../Images/bluebg.jpg";
 
 const staffHeads = [
   {
@@ -22,46 +23,41 @@ const staffHeads = [
     email: "lockmilj@etsu.edu",
     phone: "423-423-4450",
   },
-];
-
-const careerCoachPublicHealth = [
   {
     image: staff2,
     name: "Calvin Purvis",
     title: "Assistant Director [MA, BBA]",
     Meet: "https://etsu.campus.eab.com/pal/mtlv62sAEl",
+    Head: "Career Coach for College of Public Health and College of Health Sciences",
   },
 ];
 
-const careerCoachInternships = [
+const middleStaff = [
   {
     image: staff3,
     name: "Elizabeth Haselsteiner",
     title: "Associate Director of Experiential Learning",
     Meet: "https://etsu.campus.eab.com/pal/6sjDM7wdzF",
+    Head: "Career Coach for Internships and Experiential Learning Opportunities",
   },
-];
-
-const careerCoachArtsSciences = [
   {
     image: staff4,
     name: "Laura Ferguson",
     title:
       "Coordinator of Employer Relations and Events, [MA Ed. & BA - Virginia Tech]",
     Meet: "https://etsu.campus.eab.com/pal/dbWzyTHEKq",
+    Head: "Career Coach for the College of Arts and Sciences",
   },
-];
-
-const careerCoachEducation = [
   {
     image: staff5,
     name: "Chrislyn Shuford",
     title: "Coordinator, [M.Ed. & BS - ETSU]",
     Meet: "https://etsu.campus.eab.com/pal/OpasjB8d-8",
+    Head: "Clemmer College of Education and Human Development",
   },
 ];
 
-const Others = [
+const graduateAssistants = [
   {
     image: staff6,
     name: "Oluseyi Aderimwale",
@@ -96,34 +92,31 @@ const Others = [
 ];
 
 const Staff = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
-    <StaffContainer>
-      <SectionHeading>Meet the Staff</SectionHeading>
-      <StaffList data={staffHeads} />
+    <>
+      <Heading>
+        <h1>Meet the Staff</h1>
+      </Heading>
+      <StaffContainer>
+        <Section>
+          {/* <SectionHeading>Director and Assistant Director</SectionHeading> */}
+          <StaffList data={staffHeads} />
+        </Section>
 
-      <SectionHeading>
-        Career Coach for College of Public Health and College of Health Sciences
-      </SectionHeading>
-      <StaffList data={careerCoachPublicHealth} />
+        <Section>
+          {/* <SectionHeading>Career Coaches</SectionHeading> */}
+          <StaffList data={middleStaff} />
+        </Section>
 
-      <SectionHeading>
-        Career Coach for Internships and Experiential Learning Opportunities
-      </SectionHeading>
-      <StaffList data={careerCoachInternships} />
-
-      <SectionHeading>
-        Career Coach for the College of Arts and Sciences
-      </SectionHeading>
-      <StaffList data={careerCoachArtsSciences} />
-
-      <SectionHeading>
-        Clemmer College of Education and Human Development
-      </SectionHeading>
-      <StaffList data={careerCoachEducation} />
-
-      <SectionHeading>Graduate Assistant</SectionHeading>
-      <StaffList data={Others} />
-    </StaffContainer>
+        <Section>
+          <SectionHeading>Graduate Assistant</SectionHeading>
+          <StaffList data={graduateAssistants} />
+        </Section>
+      </StaffContainer>
+    </>
   );
 };
 
@@ -135,6 +128,7 @@ const StaffList = ({ data }) => {
           key={index}
           isHighlighted={staff.title?.includes("Director")}
         >
+          {staff.Head && <HeadContent>{staff.Head}</HeadContent>}
           <Image src={staff.image} alt={staff.name} />
           <Name>{staff.name}</Name>
           <Title>{staff.title}</Title>
@@ -174,6 +168,11 @@ const StaffContainer = styled.div`
   padding: 20px;
 `;
 
+const Section = styled.div`
+  margin: 20px 0;
+  padding: 20px;
+`;
+
 const SectionHeading = styled.h2`
   font-size: 1.5rem;
   color: #333;
@@ -181,6 +180,23 @@ const SectionHeading = styled.h2`
   margin: 20px 0;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
+`;
+
+const Heading = styled.div`
+  h1 {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  background-image: url(${bluebg});
+  background-size: cover;
+  color: white;
+  background-position: center;
+  text-align: center;
 `;
 
 const StaffRow = styled.div`
@@ -192,12 +208,11 @@ const StaffRow = styled.div`
 
 const StaffCard = styled.div`
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 200px;
+  max-width: 300px;
   text-align: center;
   transition: transform 0.2s;
-
   &:hover {
     transform: scale(1.05);
   }
@@ -228,12 +243,13 @@ const Contact = styled.div`
 `;
 
 const Email = styled.a`
-  display: block;
+  display: flex;
   font-size: 0.85rem;
   color: ${Colors.blue};
+  align-items: center;
+  justify-content: center;
   margin-bottom: 5px;
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
   }
@@ -244,7 +260,11 @@ const Email = styled.a`
 
 const Phone = styled.a`
   font-size: 0.85rem;
+  display: flex;
   color: ${Colors.blue};
+  color: ${Colors.blue};
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   svg {
     color: ${Colors.blue};
@@ -263,10 +283,17 @@ const MeetButton = styled.a`
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
-
   &:hover {
     background-color: #0056b3;
   }
+`;
+
+const HeadContent = styled.p`
+  font-size: 0.9rem;
+  color: ${Colors.darkBlue};
+  font-weight: bold;
+  margin: 5px 0;
+  font-style: italic;
 `;
 
 export default Staff;

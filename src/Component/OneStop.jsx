@@ -81,6 +81,7 @@ const Subhead = styled.p`
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 0;
+  color: white;
   line-height: 10px;
   @media screen and (min-width: 800px) {
     font-size: 16px;
@@ -96,6 +97,7 @@ const Heading = styled.h2`
   font-size: 30px;
   font-family: "Playfair Display", serif;
   margin: 0;
+  color: white;
   line-height: 25px;
   font-weight: 400;
   @media screen and (max-width: 320px) {
@@ -128,7 +130,7 @@ const Heading = styled.h2`
 `;
 const Button = styled.button`
   padding: 15px 30px;
-  color: ${Colors.darkBlue};
+  color: white;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   border-radius: 30px;

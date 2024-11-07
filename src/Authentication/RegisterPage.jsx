@@ -7,16 +7,23 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Colors } from "../Colors/ColorComponent";
 const { Option } = Select;
-const Head = styled.h2`
-  font-weight: 300;
+const Heading = styled.div`
+  h2 {
+    background: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
   background-image: url(${bluebg});
 
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   color: white;
-  height: 8rem;
+
   background-position: center;
   text-align: center;
   @media screen and (max-width: 320px) {
@@ -125,7 +132,10 @@ const RegisterPage = () => {
   return (
     <>
       {" "}
-      <Head> Create Your Focus 2 Career Account</Head>
+      <Heading>
+        {" "}
+        <h2>Create Your Focus 2 Career Account</h2>
+      </Heading>
       <RegisterPageContainer>
         <Form
           form={form}
