@@ -42,12 +42,12 @@ const Hero = () => {
         </p>
         <Newsplit>
           <a href="https://etsu.joinhandshake.com/login" target="_blank">
-            <Button>JOIN HANDSHAKE</Button>
+            <FirstButton>JOIN HANDSHAKE</FirstButton>
           </a>
           <Link to="/login">
-            <Button1
+            <SecondButton
               initial={{
-                backgroundPositionX: "-200%", // Start outside the button
+                backgroundPositionX: "-200%",
               }}
               whileHover={{
                 backgroundPositionX: "0%", // Animate to the full color fill
@@ -58,7 +58,7 @@ const Hero = () => {
               }}
             >
               Focus2 Login/Registration
-            </Button1>
+            </SecondButton>
           </Link>
         </Newsplit>
       </Content>
@@ -71,12 +71,18 @@ export default Hero;
 const Newsplit = styled.div`
   display: flex;
   gap: 10px;
+  margin: 0;
+  padding: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  a {
+    margin: 0;
+  }
   @media screen and (min-width: 800px) {
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
+
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -117,7 +123,7 @@ const Content = styled.div`
   height: 87vh;
   width: 100%;
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 
   text-align: center;
   color: #ffffff;
@@ -222,9 +228,7 @@ const Content = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 1rem 4rem;
-  color: white !important;
-  font-size: 1rem;
+  margin: 0;
   background: linear-gradient(
     20deg,
     #000538,
@@ -235,13 +239,48 @@ const Button = styled.button`
   );
   background-size: 200% 200%;
   /* background: ${Colors.darkBlue}; */
+`;
+const SecondButton = styled(motion.button)`
   border: 1px solid white;
   border-radius: 15px;
-  overflow: hidden;
+  padding: 1rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  background: linear-gradient(90deg, transparent 90%, #0d1355 100%);
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+  font-size: 1rem;
+  background-size: 200% 100%;
+  &:hover {
+    color: white;
+  }
+  &:active,
+  &:focus {
+    background-position-x: 0%;
+    color: white;
+
+    outline: none;
+  }
+`;
+const FirstButton = styled.button`
+  padding: 1rem 4rem;
+  border: 1px solid white;
+  border-radius: 15px;
+  background: linear-gradient(
+    20deg,
+    #000538,
+    #0d1355,
+    #000538,
+    #0d1355,
+    #0d1355
+  );
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  background-size: 200% 200%;
   animation: glow 3s infinite ease-in-out;
+
+  transition: background-color 0.3s ease-in-out;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -250,7 +289,9 @@ const Button = styled.button`
     background-color: #0d1355;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     transform: scale(1.01);
+    border-bottom: 2px solid white;
   }
+
   @keyframes glow {
     0% {
       background-position: 0% 50%;
@@ -261,28 +302,5 @@ const Button = styled.button`
     100% {
       background-position: 0% 50%;
     }
-  }
-`;
-const Button1 = styled(motion.button)`
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
-
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid white;
-  border-radius: 15px;
-  color: white;
-  background: linear-gradient(90deg, transparent 90%, #0d1355 100%);
-  background-size: 200% 100%;
-  cursor: pointer;
-  &:hover {
-    color: white;
-  }
-  &:active,
-  &:focus {
-    background-position-x: 0%;
-    color: white;
-
-    outline: none;
   }
 `;

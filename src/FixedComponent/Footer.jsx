@@ -9,67 +9,71 @@ import {
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { Colors } from "../Colors/ColorComponent";
 import logo from "../Images/east-tennessee-state-university__etsu.svg";
+import map from "../Images/topomap.svg";
 import { FaFacebookF, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
       <Container>
-        <First>
-          <h1>University Career Services - DP Culp Student Center</h1>
-          <p>Carrier Center, Room 222A - 412 J.L. Seehorn Dr. | PO Box 70718</p>
-          <p>Johnson City, TN 37614 ( Get Directions)</p>
-          <p>Phone: 423-439-4450</p>
-          <h3>DIVISION OF STUDENT LIFE AND ENROLLMENT</h3>
-        </First>
-        <Bigger>
+        <Content>
+          <First>
+            <h1>University Career Services - DP Culp Student Center</h1>
+            <p>
+              Carrier Center, Room 222A - 412 J.L. Seehorn Dr. | PO Box 70718
+            </p>
+            <p>Johnson City, TN 37614 ( Get Directions)</p>
+            <p>Phone: 423-439-4450</p>
+            <h3>DIVISION OF STUDENT LIFE AND ENROLLMENT</h3>
+          </First>
           <div>
             <Link to="/">
               <Logo src={logo} alt="Logo" />
             </Link>
-            <Intro></Intro>
           </div>
-          <Big>
-            <div>
-              <SubHead>Quick Links</SubHead>
-              <Split>
-                <Split1>
-                  <Link to="/">Home</Link>
-                  <Link to="/work-in-progress">Sample Resumes</Link>
-                  <Link to="work-in-progress">Contact</Link>
-                  <Link to="/work-in-progress">Bucky's Career Closet</Link>
-                  <Link to="/work-in-progress">Online Resources</Link>
-                  <Link to="/work-in-progress">Experimental Learning</Link>
-                </Split1>
-                <Split2>
-                  <Link to="/work-in-progress">
-                    Resume | Employment Services
-                  </Link>
-                  <Link to="/work-in-progress">Career Fairs</Link>
-                  <Link to="/work-in-progressn">Post a Job | Handshake</Link>
+          <Bigger>
+            <Big>
+              <div>
+                <SubHead>Quick Links</SubHead>
+                <Split>
+                  <Split1>
+                    <Link to="/">Home</Link>
+                    <Link to="/work-in-progress">Sample Resumes</Link>
+                    <Link to="work-in-progress">Contact</Link>
+                    <Link to="/work-in-progress">Bucky's Career Closet</Link>
+                    <Link to="/work-in-progress">Online Resources</Link>
+                    <Link to="/work-in-progress">Experimental Learning</Link>
+                  </Split1>
+                  <Split2>
+                    <Link to="/work-in-progress">
+                      Resume | Employment Services
+                    </Link>
+                    <Link to="/work-in-progress">Career Fairs</Link>
+                    <Link to="/work-in-progressn">Post a Job | Handshake</Link>
 
-                  <Link to="/work-in-progress">Employer Service</Link>
-                  <Link to="/work-in-progress">Faculty & Staff</Link>
-                  <Link to="/work-in-progress">Families</Link>
-                </Split2>
-              </Split>
-            </div>
-            <Socials>
-              <SubHead>Contact us</SubHead>
+                    <Link to="/work-in-progress">Employer Service</Link>
+                    <Link to="/work-in-progress">Faculty & Staff</Link>
+                    <Link to="/work-in-progress">Families</Link>
+                  </Split2>
+                </Split>
+              </div>
+              <Socials>
+                <SubHead>Contact us</SubHead>
 
-              <Mail>
-                <ContactText href="mailto:careers@etsu.edu">
-                  <FaEnvelope />
-                  careers@etsu.edu
-                </ContactText>
-                <ContactText href="tel:423-439-4450">
-                  <FaPhone />
-                  423-439-4450
-                </ContactText>
-              </Mail>
-            </Socials>
-          </Big>
-        </Bigger>
-        <End>© 2024 University Career Service - All rights reserved</End>
+                <Mail>
+                  <ContactText href="mailto:careers@etsu.edu">
+                    <FaEnvelope />
+                    careers@etsu.edu
+                  </ContactText>
+                  <ContactText href="tel:423-439-4450">
+                    <FaPhone />
+                    423-439-4450
+                  </ContactText>
+                </Mail>
+              </Socials>
+            </Big>
+          </Bigger>
+          <End>© 2024 University Career Service - All rights reserved</End>
+        </Content>
       </Container>
     </>
   );
@@ -152,7 +156,10 @@ const Intro = styled.p`
 `;
 const Logo = styled.img`
   max-width: 100%;
-  /* height: 3rem; */
+  height: 10rem;
+  @media screen and (min-width: 600px) {
+    height: 8rem;
+  }
 `;
 const Split = styled.div`
   display: flex;
@@ -177,9 +184,9 @@ const Split = styled.div`
   @media (min-width: 400px) and (max-width: 499px) {
     gap: 50px;
   }
-  @media screen and (min-width: 1000px) {
+  /* @media screen and (min-width: 1000px) {
     gap: 20px;
-  }
+  } */
 `;
 const Split1 = styled.div`
   display: flex;
@@ -187,9 +194,9 @@ const Split1 = styled.div`
 
   gap: 10px;
   a {
-    @media screen and (min-width: 1000px) {
+    /* @media screen and (min-width: 1000px) {
       min-width: 100px;
-    }
+    } */
 
     text-decoration: none;
     color: white;
@@ -210,9 +217,9 @@ const Split2 = styled.div`
 
   gap: 10px;
   a {
-    @media screen and (min-width: 1000px) {
+    /* @media screen and (min-width: 1000px) {
       min-width: 200px;
-    }
+    } */
 
     text-decoration: none;
     color: white;
@@ -246,17 +253,6 @@ const Container = styled.div`
     rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background: ${Colors.darkBlue};
-  padding: 2rem;
-  color: white;
-  @media screen and (min-width: 800px) {
-    padding: 2rem 4rem;
-  }
-  @media screen and (min-width: 1000px) {
-    padding: 2rem 6rem;
-  }
-  @media screen and (min-width: 1200px) {
-    padding: 2rem 9rem;
-  }
 `;
 const Big = styled.div`
   @media screen and (min-width: 800px) {
@@ -265,14 +261,33 @@ const Big = styled.div`
     gap: 100px;
     padding: 0 0 2rem 0;
   }
-  @media screen and (min-width: 1000px) {
+  /* @media screen and (min-width: 1000px) {
     gap: 10px;
-  }
+  } */
 `;
 const Bigger = styled.div`
-  @media screen and (min-width: 1000px) {
+  /* @media screen and (min-width: 1000px) {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+  } */
+`;
+const Content = styled.div`
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url(${map}); */
+  /* background-size: cover; */
+  background-position: center;
+  @media screen and (min-width: 800px) {
+    padding: 2rem 4rem;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 2rem 6rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 2rem 9rem;
   }
 `;
