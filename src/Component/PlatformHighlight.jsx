@@ -73,6 +73,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem 3rem 2rem;
+  @media screen and (min-width: 1200px) {
+    padding: 1rem 5rem 3rem 5rem;
+  }
 `;
 const VideoInstructions = styled.a`
   position: relative;
@@ -144,6 +147,13 @@ const Content = styled.div`
   padding-top: 20px;
   flex-direction: column;
   gap: 30px;
+  @media screen and (min-width: 700px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200;
+  }
   p {
     font-weight: 300;
     text-align: center;

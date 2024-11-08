@@ -19,6 +19,15 @@ const Container = styled.div`
   color: #000;
   overflow: hidden;
   padding: 4rem 1rem 7rem 1rem;
+  @media screen and (min-width: 900px) {
+    /* padding: 4rem 2rem 7rem 2rem; */
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 4rem 2rem 7rem 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 4rem 6rem 7rem 6rem;
+  }
 `;
 
 const Headings = styled.h1`

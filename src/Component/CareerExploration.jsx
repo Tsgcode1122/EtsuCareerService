@@ -9,6 +9,15 @@ const Section = styled.section`
   padding: 1rem 2rem 6rem 2rem;
   /* background-color: #f5f5f5; */
   text-align: center;
+  @media screen and (min-width: 900px) {
+    /* padding: 4rem 2rem 7rem 2rem; */
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 4rem 2rem 7rem 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 4rem 6rem 7rem 6rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -20,7 +29,7 @@ const SectionTitle = styled.h2`
 const IndustryGrid = styled.div`
   padding-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;

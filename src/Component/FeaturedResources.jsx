@@ -43,14 +43,36 @@ const Title = styled.h2`
 const Content = styled.div`
   padding: 2rem;
   background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  @media screen and (min-width: 900px) {
+    /* padding: 4rem 2rem 7rem 2rem; */
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 4rem 2rem 7rem 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 4rem 6rem 7rem 6rem;
+  }
 `;
 const ResourceContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200;
+  }
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200;
+  }
 `;
 
 const ResourceCard = styled.div`
