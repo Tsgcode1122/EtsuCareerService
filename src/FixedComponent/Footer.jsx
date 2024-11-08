@@ -21,7 +21,12 @@ const Footer = () => {
             <p>
               Carrier Center, Room 222A - 412 J.L. Seehorn Dr. | PO Box 70718
             </p>
-            <p>Johnson City, TN 37614 ( Get Directions)</p>
+            <p>
+              Johnson City, TN 37614{" "}
+              <a href="http://maps.google.com/?q=Carrier%20Center,%20Room%20222A%20-%20412%20J.L.%20Seehorn%20Dr.+Johnson%20City+TN">
+                ( Get Directions)
+              </a>{" "}
+            </p>
             <p>Phone: 423-439-4450</p>
             <h3>DIVISION OF STUDENT LIFE AND ENROLLMENT</h3>
           </First>
@@ -107,7 +112,16 @@ const First = styled.div`
   }
   p {
     margin: 0;
-    font-size: 14px;
+    font-weight: 300;
+    font-size: 16px;
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 15px;
+    }
+    a {
+      color: white;
+    }
   }
   h3 {
     font-weight: 300;
@@ -170,6 +184,11 @@ const Split = styled.div`
     color: #b3b3b3 !important;
     font-size: 14px;
     cursor: pointer;
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 20px;
+    }
     &:hover {
       color: #ffffff !important;
       transform: translateX(5px);
@@ -200,6 +219,11 @@ const Split1 = styled.div`
 
     text-decoration: none;
     color: white;
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 20px;
+    }
     @media screen and (max-width: 320px) {
       min-width: 100px;
     }

@@ -132,6 +132,13 @@ const Focus = styled.div`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  p {
+    font-weight: 300;
+    line-height: 24px;
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
+    }
+  }
 `;
 
 const QuickLink = styled(Link)`

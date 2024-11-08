@@ -99,6 +99,12 @@ const ResourceDescription = styled.p`
   color: white;
   margin-bottom: 1rem;
   text-align: center;
+  font-weight: 300;
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+  }
 `;
 
 const ResourceButton = styled(Link)`

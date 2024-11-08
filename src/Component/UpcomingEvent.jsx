@@ -5,6 +5,7 @@ import { StarFilled, StarOutlined } from "@ant-design/icons";
 import Heading from "../FixedComponent/Heading";
 import { Colors } from "../Colors/ColorComponent";
 import bg from "../Images/event.png";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -140,7 +141,7 @@ const EventDescription = styled.p`
   min-height: 105px;
 `;
 
-const RegisterButton = styled.a`
+const RegisterButton = styled(Link)`
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   color: #fff;
@@ -186,8 +187,7 @@ const events = [
     topic: "Crafting a Professional Resume for the Modern Job Market",
     description:
       "Learn how to create a compelling resume that stands out to employers. This workshop covers format, keywords, and tailoring resumes for specific job applications.",
-    register:
-      "https://universitycareercenter.com/events/register/resume-workshop",
+    register: "work-in-progress",
     speaker: "Jenny Lockmiller, Director",
     contact: "careerservices@university.edu",
   },
@@ -199,8 +199,7 @@ const events = [
     topic: "Optimizing Your LinkedIn Profile for Networking and Job Search",
     description:
       "Maximize your LinkedIn profile to make a strong first impression with recruiters. The session includes tips on headline writing, keyword optimization, and networking techniques.",
-    register:
-      "https://universitycareercenter.com/events/register/linkedin-seminar",
+    register: "work-in-progress",
     speaker: "Calvin Purvis, Assistant Director",
     contact: "careerservices@university.edu",
   },
@@ -213,8 +212,7 @@ const events = [
       "Practice and Improve Your Interviewing Skills with Real-Time Feedback",
     description:
       "Schedule a 30-minute mock interview session to receive personalized feedback and guidance from career counselors and alumni recruiters.",
-    register:
-      "https://universitycareercenter.com/events/register/mock-interview",
+    register: "work-in-progress",
     speaker: "Various Career Coaches and Alumni",
     contact: "careerservices@university.edu",
   },
@@ -226,7 +224,7 @@ const events = [
     topic: "Network with Employers and Explore Internship & Job Opportunities",
     description:
       "Meet representatives from top companies and learn about available internship and job opportunities. Dress professionally and bring multiple copies of your resume.",
-    register: "https://universitycareercenter.com/events/register/career-fair",
+    register: "work-in-progress",
     speaker: "Jenny Lockmiller, Director",
     contact: "careerservices@university.edu",
   },
@@ -238,8 +236,7 @@ const events = [
     topic: "Building Your Personal Brand for Career Success",
     description:
       "Discover strategies for developing a personal brand that aligns with your career goals and attracts potential employers. Learn how to use social media, networking, and public speaking to build a strong professional presence.",
-    register:
-      "https://universitycareercenter.com/events/register/personal-branding",
+    register: "work-in-progress",
     speaker: "Elizabeth Haselsteiner",
     contact: "careerservices@university.edu",
   },
@@ -264,9 +261,7 @@ const UpcomingEvent = () => {
               {event.speaker && (
                 <SpeakerText>Speaker: {event.speaker}</SpeakerText>
               )}
-              <RegisterButton href={event.register} target="_blank">
-                Register
-              </RegisterButton>
+              <RegisterButton to={event.register}>Register</RegisterButton>
             </EventCard>
           ))}
         </SlideDiv>

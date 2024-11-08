@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Heading from "../FixedComponent/Heading";
-
+import Img4 from "../Images/neexx.png";
 // Styled components for the section
 const Section = styled.section`
   padding: 1rem 2rem 6rem 2rem;
@@ -33,6 +33,10 @@ const IndustryGrid = styled.div`
   gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  img {
+    max-width: 100%;
+    height: 20px;
+  }
 `;
 
 const IndustryCard = styled(Link)`
@@ -61,7 +65,13 @@ const IndustryTitle = styled.h3`
 
 const IndustryDescription = styled.p`
   font-size: 1rem;
-  color: #666;
+  color: black;
+  font-weight: 300;
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+  }
 `;
 
 const industries = [
@@ -106,6 +116,7 @@ const CareerExploration = () => {
           <IndustryCard key={index} to={industry.path}>
             <IndustryTitle>{industry.name}</IndustryTitle>
             <IndustryDescription>{industry.description}</IndustryDescription>
+            <img src={Img4} />
           </IndustryCard>
         ))}
       </IndustryGrid>

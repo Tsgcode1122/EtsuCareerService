@@ -251,17 +251,19 @@ const Navbar = () => {
                   <span>Student</span>
                 </Link>
                 <DropdownMenu show={activeDropdown === "student"}>
-                  <DropdownLink to="/student-resources">
+                  <DropdownLink to="/work-in-progress">
                     Resumes | Employment Services
                   </DropdownLink>
-                  <DropdownLink to="/job-search">Sample Resumes</DropdownLink>
-                  <DropdownLink to="/career-advising">
+                  <DropdownLink to="/work-in-progress">
+                    Sample Resumes
+                  </DropdownLink>
+                  <DropdownLink to="/work-in-progress">
                     Experiential Learning
                   </DropdownLink>
-                  <DropdownLink to="/development-programs">
+                  <DropdownLink to="/work-in-progress">
                     Bucky's Career Closet
                   </DropdownLink>
-                  <DropdownLink to="/development-programs">
+                  <DropdownLink to="/work-in-progress">
                     Online Resources
                   </DropdownLink>
                 </DropdownMenu>
@@ -276,12 +278,16 @@ const Navbar = () => {
                   <span>Alumni</span>
                 </Link>
                 <DropdownMenu show={activeDropdown === "alumni"}>
-                  <DropdownLink to="/career-transition">
+                  <DropdownLink to="/work-in-progress">
                     Resumes | Employment Services
                   </DropdownLink>
-                  <DropdownLink to="/networking">Sample Resumes</DropdownLink>
-                  <DropdownLink to="/job-board">Online Resources</DropdownLink>
-                  <DropdownLink to="/success-stories">
+                  <DropdownLink to="/work-in-progress">
+                    Sample Resumes
+                  </DropdownLink>
+                  <DropdownLink to="/work-in-progress">
+                    Online Resources
+                  </DropdownLink>
+                  <DropdownLink to="/work-in-progress">
                     Success Stories
                   </DropdownLink>
                 </DropdownMenu>
@@ -296,31 +302,37 @@ const Navbar = () => {
                   <span>Employers</span>
                 </Link>
                 <DropdownMenu show={activeDropdown === "employers"}>
-                  <DropdownLink to="/partner">Employer Services</DropdownLink>
-                  <DropdownLink to="/career-fairs">
+                  <DropdownLink to="/work-in-progress">
+                    Employer Services
+                  </DropdownLink>
+                  <DropdownLink to="/work-in-progress">
                     Post a Job | Handshake
                   </DropdownLink>
-                  <DropdownLink to="/resume-access">
+                  <DropdownLink to="/work-in-progress">
                     Experiential Learning
                   </DropdownLink>
-                  <DropdownLink to="/testimonials">Career Fairs</DropdownLink>
-                  <DropdownLink to="/testimonials">Maps & Parking</DropdownLink>
+                  <DropdownLink to="/work-in-progress">
+                    Career Fairs
+                  </DropdownLink>
+                  <DropdownLink to="/work-in-progress">
+                    Maps & Parking
+                  </DropdownLink>
                 </DropdownMenu>
               </LinkWrapper>
 
               {/* Other Links */}
               <LinkWrapper>
-                <Link to="/user-dashboard">
+                <Link to="/faculty-staff">
                   <span>Faculty & Staff</span>
                 </Link>
               </LinkWrapper>
               <LinkWrapper>
-                <Link to="/families">
+                <Link to="/work-in-progress">
                   <span>Families</span>
                 </Link>
               </LinkWrapper>
               <LinkWrapper>
-                <Link to="/contact">
+                <Link to="/work-in-progress">
                   <span>Contact Us</span>
                 </Link>
               </LinkWrapper>

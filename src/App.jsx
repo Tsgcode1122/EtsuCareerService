@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     /* background-color:#121933 !important; */
  
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
     min-height: 100%;
   }
 

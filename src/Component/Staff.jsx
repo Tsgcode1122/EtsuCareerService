@@ -98,7 +98,7 @@ const Staff = () => {
   return (
     <>
       <Heading>
-        <h1>Meet the Staff</h1>
+        <h1>Meet Our Team</h1>
       </Heading>
       <StaffContainer>
         <Section>
