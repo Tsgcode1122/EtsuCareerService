@@ -53,7 +53,7 @@ const Footer = () => {
                       Resume | Employment Services
                     </Link>
                     <Link to="/work-in-progress">Career Fairs</Link>
-                    <Link to="/work-in-progressn">Post a Job | Handshake</Link>
+                    <Link to="/work-in-progress">Post a Job | Handshake</Link>
 
                     <Link to="/work-in-progress">Employer Service</Link>
                     <Link to="/work-in-progress">Faculty & Staff</Link>

@@ -15,12 +15,15 @@ const Section = styled.section`
   &::-webkit-scrollbar {
     display: none; /* Hides scrollbar */
   }
+  -webkit-background-size: cover; /* For Safari and older Chrome */
+  -moz-background-size: cover; /* For Firefox */
+  -o-background-size: cover; /* For older Opera */
   background: url(${Img4}) no-repeat center center;
   background-size: cover !important;
 
   background-attachment: fixed !important;
 
-  background-color: #f7f9fc;
+  /* background-color: #f7f9fc; */
   color: #333;
   text-align: center;
 `;
