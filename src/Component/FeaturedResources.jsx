@@ -20,8 +20,9 @@ const Section = styled.section`
   -o-background-size: cover; /* For older Opera */
   background: url(${Img4}) no-repeat center center;
   background-size: cover !important;
-
-  background-attachment: fixed !important;
+  @media screen and (min-width: 500px) {
+    background-attachment: fixed !important;
+  }
 
   /* background-color: #f7f9fc; */
   color: #333;
