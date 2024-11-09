@@ -90,15 +90,15 @@ const EventCard = styled.div`
   scroll-snap-align: center;
   @media screen and (max-width: 320px) {
     min-width: 250px;
-    padding: 8px;
+    padding: 12px 20px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     min-width: 280px;
-    padding: 8px;
+    padding: 12px 20px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     min-width: 280px;
-    padding: 8px;
+    padding: 12px 20px;
   }
 `;
 

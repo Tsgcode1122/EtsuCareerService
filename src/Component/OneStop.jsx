@@ -57,13 +57,13 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   @media screen and (max-width: 320px) {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.7);
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
   }
   @media screen and (min-width: 800px) {
     max-width: 600px;

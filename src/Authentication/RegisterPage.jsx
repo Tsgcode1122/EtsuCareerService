@@ -29,7 +29,11 @@ const Heading = styled.div`
 `;
 const RegisterPageContainer = styled.div`
   margin: auto;
-  width: 400px;
+  /* @media (min-width: 768px) {
+    margin: 2rem 8rem;
+  } */
+  min-width: 400px;
+  max-width: 1200px;
   margin-top: 10px;
   background: white;
   padding: 20px;
@@ -135,139 +139,143 @@ const RegisterPage = () => {
           scrollToFirstError
           layout="vertical"
         >
-          <Form.Item
-            name="AccessCode"
-            label="Your Access Code"
-            rules={[
-              { required: true, message: "Please enter your AccessCode" },
-            ]}
-          >
-            <StyledInput />
-          </Form.Item>
-          <Form.Item
-            name="fullName"
-            label="Full Name"
-            rules={[{ required: true, message: "Please enter your full name" }]}
-          >
-            <StyledInput />
-          </Form.Item>
-          <Form.Item
-            name="email"
-            label="Email"
-            rules={[
-              { type: "email", message: "Please enter a valid email" },
-              { required: true, message: "Please enter your email" },
-            ]}
-          >
-            <StyledInput />
-          </Form.Item>
-          <Form.Item
-            name="confirmEmail"
-            label="Confirm Email"
-            rules={[
-              { type: "email", message: "Please enter a valid email" },
-              { required: true, message: "Please enter your email" },
-            ]}
-          >
-            <StyledInput />
-          </Form.Item>
+          <GridContainer>
+            <Form.Item
+              name="AccessCode"
+              label="Your Access Code"
+              rules={[
+                { required: true, message: "Please enter your AccessCode" },
+              ]}
+            >
+              <StyledInput />
+            </Form.Item>
+            <FullWidthItem
+              name="fullName"
+              label="Full Name"
+              rules={[
+                { required: true, message: "Please enter your full name" },
+              ]}
+            >
+              <StyledInput />
+            </FullWidthItem>
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[
+                { type: "email", message: "Please enter a valid email" },
+                { required: true, message: "Please enter your email" },
+              ]}
+            >
+              <StyledInput />
+            </Form.Item>
+            <Form.Item
+              name="confirmEmail"
+              label="Confirm Email"
+              rules={[
+                { type: "email", message: "Please enter a valid email" },
+                { required: true, message: "Please enter your email" },
+              ]}
+            >
+              <StyledInput />
+            </Form.Item>
 
-          <Form.Item
-            name="password"
-            label="Password"
-            rules={[
-              { required: true, message: "Please enter your password" },
-              {
-                min: 7,
-                message: "Password must be at least 7 characters long",
-              },
-              { validator: validatePassword },
-            ]}
-          >
-            <StyledInput.Password />
-          </Form.Item>
-
-          <Form.Item
-            name="confirmPassword"
-            label="Confirm Password"
-            dependencies={["password"]}
-            hasFeedback
-            rules={[
-              { required: true, message: "Please confirm your password" },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue("password") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject("The two passwords do not match");
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[
+                { required: true, message: "Please enter your password" },
+                {
+                  min: 7,
+                  message: "Password must be at least 7 characters long",
                 },
-              }),
-            ]}
-          >
-            <StyledInput.Password />
-          </Form.Item>
-          <Form.Item
-            name="phoneNumber"
-            label="Student ID: E#"
-            rules={[
-              { required: true, message: "Please enter your Student ID" },
-              {
-                message: "Please enter your Student ID",
-              },
-            ]}
-          >
-            <StyledInput />
-          </Form.Item>
-          <Form.Item
-            label="Year of Graduation"
-            name="graduationYear"
-            rules={[
-              {
-                required: true,
-                message: "Please select your graduation year!",
-              },
-            ]}
-          >
-            <Select placeholder="-- select one --">
-              <Option value="2024">2024</Option>
-              <Option value="2025">2025</Option>
-              <Option value="2026">2026</Option>
-              <Option value="2027">2027</Option>
-              <Option value="2028">2028</Option>
-              <Option value="2029">2029</Option>
-              <Option value="2030">2030</Option>
-              <Option value="alumni">Alumni</Option>
-              <Option value="staff">Staff / Other</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
-            label="What brought you in today?"
-            name="graduationYear"
-            rules={[
-              {
-                required: true,
-                message: "Please select your graduation year!",
-              },
-            ]}
-          >
-            <Select placeholder="-- select one --">
-              <Option value="academic-adviser-referral">
-                Academic Adviser Referral
-              </Option>
-              <Option value="athlete">Athlete</Option>
-              <Option value="case">
-                Center for Advisement & Student Excellence (CASE)
-              </Option>
-              <Option value="etsu-1020">ETSU 1020</Option>
-              <Option value="internal-referral">Internal Referral</Option>
-              <Option value="pre-health">Pre-Health</Option>
-              <Option value="puzzle-of-life">Puzzle of Life</Option>
-              <Option value="alumni">Alumni</Option>
-              <Option value="veteran-affairs">Veteran Affairs</Option>
-              <Option value="public-health">Public Health</Option>
-              <Option value="other">Other</Option>
-            </Select>
-          </Form.Item>
+                { validator: validatePassword },
+              ]}
+            >
+              <StyledInput.Password />
+            </Form.Item>
+
+            <Form.Item
+              name="confirmPassword"
+              label="Confirm Password"
+              dependencies={["password"]}
+              hasFeedback
+              rules={[
+                { required: true, message: "Please confirm your password" },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject("The two passwords do not match");
+                  },
+                }),
+              ]}
+            >
+              <StyledInput.Password />
+            </Form.Item>
+            <FullWidthItem
+              name="phoneNumber"
+              label="Student ID: E#"
+              rules={[
+                { required: true, message: "Please enter your Student ID" },
+                {
+                  message: "Please enter your Student ID",
+                },
+              ]}
+            >
+              <StyledInput />
+            </FullWidthItem>
+            <Form.Item
+              label="Year of Graduation"
+              name="graduationYear"
+              rules={[
+                {
+                  required: true,
+                  message: "Please select your graduation year!",
+                },
+              ]}
+            >
+              <Select placeholder="-- select one --">
+                <Option value="2024">2024</Option>
+                <Option value="2025">2025</Option>
+                <Option value="2026">2026</Option>
+                <Option value="2027">2027</Option>
+                <Option value="2028">2028</Option>
+                <Option value="2029">2029</Option>
+                <Option value="2030">2030</Option>
+                <Option value="alumni">Alumni</Option>
+                <Option value="staff">Staff / Other</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label="What brought you in today?"
+              name="graduationYear"
+              rules={[
+                {
+                  required: true,
+                  message: "Please select What brought you in today!",
+                },
+              ]}
+            >
+              <Select placeholder="-- select one --">
+                <Option value="academic-adviser-referral">
+                  Academic Adviser Referral
+                </Option>
+                <Option value="athlete">Athlete</Option>
+                <Option value="case">
+                  Center for Advisement & Student Excellence (CASE)
+                </Option>
+                <Option value="etsu-1020">ETSU 1020</Option>
+                <Option value="internal-referral">Internal Referral</Option>
+                <Option value="pre-health">Pre-Health</Option>
+                <Option value="puzzle-of-life">Puzzle of Life</Option>
+                <Option value="alumni">Alumni</Option>
+                <Option value="veteran-affairs">Veteran Affairs</Option>
+                <Option value="public-health">Public Health</Option>
+                <Option value="other">Other</Option>
+              </Select>
+            </Form.Item>
+          </GridContainer>
           <CenteredCheckbox>
             <Form.Item
               name="agreement"
@@ -322,4 +330,16 @@ const CenteredCheckbox = styled.div`
   align-items: center;
   text-align: center;
   margin-top: 20px;
+`;
+const GridContainer = styled.div`
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+const FullWidthItem = styled(Form.Item)`
+  grid-column: span 2;
 `;

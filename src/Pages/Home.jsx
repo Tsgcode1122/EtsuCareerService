@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../Component/Hero";
 import Mission from "../Component/Mission";
 import PlatformHighlight from "../Component/PlatformHighlight";
@@ -9,6 +9,9 @@ import CareerExploration from "../Component/CareerExploration";
 import FeaturedResources from "../Component/FeaturedResources";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <Hero />

@@ -16,9 +16,9 @@ const Section = styled.section`
     display: none; /* Hides scrollbar */
   }
   background: url(${Img4}) no-repeat center center;
-  background-size: cover;
+  background-size: cover !important;
 
-  background-attachment: fixed;
+  background-attachment: fixed !important;
 
   background-color: #f7f9fc;
   color: #333;
@@ -86,6 +86,15 @@ const ResourceCard = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
+  @media screen and (max-width: 320px) {
+    padding: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 1rem;
+  }
 `;
 
 const ResourceTitle = styled.h3`

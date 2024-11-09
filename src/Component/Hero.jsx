@@ -8,26 +8,26 @@ import Img4 from "../Images/hero1.jpg";
 import { Colors } from "../Colors/ColorComponent";
 import { Link } from "react-router-dom";
 
-const images = [Img1, Img2, Img3, Img4];
+const images = [Img1];
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 6000); // 5 seconds interval
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImage((prev) => (prev + 1) % images.length);
+  //   }, 6000); // 5 seconds interval
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <Container id="home">
       <AnimatePresence>
         <Background
           key={currentImage}
-          initial={{ opacity: 0, scale: 1.03 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
+          // initial={{ opacity: 0, scale: 1.03 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: "easeInOut" }}
           style={{ backgroundImage: `url(${images[currentImage]})` }}
         />
