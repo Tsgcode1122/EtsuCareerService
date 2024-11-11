@@ -12,22 +12,22 @@ const Container = styled.div`
   align-items: center;
   text-align: center;
   height: 100%;
-  background: url(${bg}) no-repeat;
+  // background: url(${bg}) no-repeat;
   background-size: cover;
   background-position: center center;
 
-  /* background: ${Colors.offWhite}; */
+  background: ${Colors.offWhite};
   color: #000;
   overflow: hidden;
-  padding: 4rem 1rem 7rem 1rem;
+  padding: 2rem 1rem 5rem 1rem;
   @media screen and (min-width: 900px) {
     /* padding: 4rem 2rem 7rem 2rem; */
   }
   @media screen and (min-width: 1000px) {
-    padding: 4rem 2rem 7rem 2rem;
+    padding: 2rem 2rem 5rem 2rem;
   }
   @media screen and (min-width: 1200px) {
-    padding: 4rem 6rem 7rem 6rem;
+    padding: 2rem 6rem 5rem 6rem;
   }
 `;
 
